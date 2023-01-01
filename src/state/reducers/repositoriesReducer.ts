@@ -1,5 +1,5 @@
 import { ActionType } from '../action-types';
-import { MyAction } from '../actions';
+import { RepositoriesAction } from '../actions';
 
 interface RepositoriesState {
   loading: boolean;
@@ -7,7 +7,7 @@ interface RepositoriesState {
   data: string[];
 }
 
-export const reducer = (state: RepositoriesState, action: MyAction): RepositoriesState => {
+export const reducer = (state: RepositoriesState, action: RepositoriesAction): RepositoriesState => {
   switch (action.type) {
     case ActionType.SearchRepositories:
       return { loading: true, error: null, data: [] };
