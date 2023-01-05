@@ -13,7 +13,7 @@ interface Response {
   ]
 }
 
-export const SearchRepositories = (term: string) => {
+export const searchRepositories = (term: string) => {
   return async (dispatch: Dispatch<RepositoriesAction>) => {
     dispatch({
       type: ActionType.SearchRepositories

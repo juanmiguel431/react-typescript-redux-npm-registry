@@ -1,17 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { actionCreators } from '../state/index';
-import { Dispatch } from 'redux';
-import { RepositoriesAction } from '../state/actions';
+import { useActions } from '../hooks/useActions';
 
 export const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState('');
-  const dispatch = useDispatch();
+  const { searchRepositories } = useActions();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(actionCreators.SearchRepositories(term) as any);
+    searchRepositories(term);
   };
 
   return (
